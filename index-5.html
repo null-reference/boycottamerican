@@ -259,11 +259,6 @@
                 <li><strong>Trade Analysis Reports:</strong> Stay informed about which sectors are most affected by the trade tensions.</li>
             </ul>
         </section> -->
-
-        <section class="contact">
-            <h2>Contact Us</h2>
-            <p>Have questions or suggestions? We'd love to hear from you! Reach out to us at <a href="mailto:elbowsup@boycottamerican.ca">elbowsup@boycottamerican.ca</a></p>
-        </section>
         
         <!-- <section class="cta">
             <h2>Join the Movement</h2>
@@ -290,5 +285,42 @@
         </div> -->
         <p>&copy; 2025 BoycottAmerican.ca</p>
     </footer>
+    
+    <script>
+        // Simple counter for demonstration purposes
+        let count = Math.floor(Math.random() * 10000) + 5000; // Start with random number between 5,000 and 15,000
+        const counterElement = document.getElementById('counter');
+        counterElement.textContent = count.toLocaleString();
+        
+        // Increment counter when pledge button is clicked
+        document.getElementById('pledge-button').addEventListener('click', function() {
+            count++;
+            counterElement.textContent = count.toLocaleString();
+            
+            // Show acknowledgment
+            alert('Thank you for your pledge to support Canadian products and businesses!');
+            
+            // Save to local storage for persistence
+            localStorage.setItem('pledgeCount', count);
+        });
+        
+        // Check for saved count in local storage
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedCount = localStorage.getItem('pledgeCount');
+            if (savedCount) {
+                count = parseInt(savedCount);
+                counterElement.textContent = count.toLocaleString();
+            }
+            
+            // Occasionally increment the counter for realistic effect
+            setInterval(function() {
+                if (Math.random() > 0.7) {  // 30% chance of increment
+                    count++;
+                    counterElement.textContent = count.toLocaleString();
+                    localStorage.setItem('pledgeCount', count);
+                }
+            }, 10000);  // Check every 10 seconds
+        });
+    </script>
 </body>
 </html>
