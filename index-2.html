@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boycott American - Canadian Response</title>
+    <style>
+        :root {
+            --primary: #d80621;
+            --secondary: #002868;
+            --light: #f2f2f2;
+            --dark: #333;
+            --maple: #ff0000;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--maple);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .logo svg {
+            margin-right: 10px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 20px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--light);
+            text-decoration: underline;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 40, 104, 0.8), rgba(0, 40, 104, 0.8)), url('/api/placeholder/1200/500') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--maple);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #c00;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            color: var(--secondary);
+        }
+        
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-img {
+            height: 200px;
+            background-color: #ddd;
+        }
+        
+        .card-content {
+            padding: 20px;
+        }
+        
+        .card h3 {
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+        
+        .impact-stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+        
+        .stat-box {
+            text-align: center;
+            padding: 20px;
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .stat-box .number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--maple);
+            margin-bottom: 10px;
+        }
+        
+        .alternatives {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            background-color: white;
+            color: var(--dark);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: var(--maple);
+            color: white;
+        }
+        
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .newsletter {
+            background-color: var(--light);
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .newsletter-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-form input {
+            width: 70%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+        }
+        
+        .newsletter-form button {
+            width: 30%;
+            padding: 12px;
+            background-color: var(--maple);
+            color: white;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .footer-links li {
+            margin: 0 15px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .social-icons {
+            margin: 20px 0;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            margin: 0 10px;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .card-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .impact-stats {
+                flex-direction: column;
+            }
+            
+            .newsletter-form input,
+            .newsletter-form button {
+                width: 100%;
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="white"/>
+                        <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>BoycottAmerican.ca</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#alternatives">Alternatives</a></li>
+                    <li><a href="#take-action">Take Action</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Standing Together for Canadian Trade</h1>
+            <p>Join millions of Canadians in response to recent U.S. trade restrictions by choosing Canadian and international alternatives to American products.</p>
+            <a href="#take-action" class="btn">How You Can Help</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>Understanding the Trade Situation</h2>
+            <div class="impact-stats">
+                <div class="stat-box">
+                    <div class="number">$400B+</div>
+                    <p>Annual bilateral trade affected</p>
+                </div>
+                <div class="stat-box">
+                    <div class="number">$85B</div>
+                    <p>Canadian exports at risk</p>
+                </div>
+                <div class="stat-box">
+                    <div class="number">1.7M</div>
+                    <p>Canadian jobs supported by U.S. trade</p>
+                </div>
+            </div>
+            <p>The recent trade restrictions imposed by the United States against Canada represent an unprecedented challenge to our long-standing economic partnership. As our nation's largest trading partner takes this adversarial stance, Canadians are responding with unity and determination to protect our economy and workers.</p>
+            <p>This movement is not about animosity toward American citizens but rather a reasoned economic response to protect Canadian interests in the face of unexpected trade barriers.</p>
+        </div>
+    </section>
+
+    <section id="products" class="products">
+        <div class="container">
+            <h2>Affected Canadian Industries</h2>
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-img">
+                        <img src="/api/placeholder/300/200" alt="Lumber and forestry products" />
+                    </div>
+                    <div class="card-content">
+                        <h3>Forestry Products</h3>
+                        <p>Lumber, paper, and wood products face new tariffs and restrictions despite previous agreements.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <img src="/api/placeholder/300/200" alt="Canadian agricultural products" />
+                    </div>
+                    <div class="card-content">
+                        <h3>Agricultural Goods</h3>
+                        <p>Dairy, meat, grains, and other farm products are seeing increased restrictions at the border.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <img src="/api/placeholder/300/200" alt="Canadian energy resources" />
+                    </div>
+                    <div class="card-content">
+                        <h3>Energy Resources</h3>
+                        <p>Oil, natural gas, and electricity exports are facing new regulatory hurdles and limitations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="alternatives" class="alternatives">
+        <div class="container">
+            <h2>Canadian Alternatives to American Products</h2>
+            <p>Supporting Canadian businesses not only helps our economy but also often delivers high-quality products that reflect our values and standards.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product Category</th>
+                        <th>American Brand</th>
+                        <th>Canadian Alternative</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Coffee</td>
+                        <td>Starbucks</td>
+                        <td>Tim Hortons, Second Cup</td>
+                    </tr>
+                    <tr>
+                        <td>Fashion</td>
+                        <td>Gap, Old Navy</td>
+                        <td>Roots, Lululemon, Aritzia</td>
+                    </tr>
+                    <tr>
+                        <td>Groceries</td>
+                        <td>Walmart, Whole Foods</td>
+                        <td>Loblaws, Sobeys, Metro</td>
+                    </tr>
+                    <tr>
+                        <td>Electronics</td>
+                        <td>Apple, Dell</td>
+                        <td>Blackberry, Canada Computers</td>
+                    </tr>
+                    <tr>
+                        <td>Fast Food</td>
+                        <td>McDonald's, Subway</td>
+                        <td>Harvey's, Swiss Chalet</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="take-action">
+        <div class="container">
+            <h2>How You Can Help</h2>
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Check Labels</h3>
+                        <p>Look for the "Made in Canada" label when shopping and prioritize Canadian-made products.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Shop Local</h3>
+                        <p>Support your local businesses and farmers' markets where Canadian goods are more prevalent.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Spread Awareness</h3>
+                        <p>Share information about Canadian alternatives on social media and with friends and family.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Contact Representatives</h3>
+                        <p>Let your local MP know you support standing up for Canadian trade interests.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="container">
+            <h2>Stay Informed</h2>
+            <p>Sign up for our newsletter to receive updates on the trade situation and tips for supporting Canadian businesses.</p>
+            <div class="newsletter-form">
+                <input type="email" placeholder="Your email address">
+                <button type="submit">Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Together we can make a difference for Canadian workers and businesses.</p>
+            <ul class="footer-links">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <a href="#" aria-label="Twitter">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M23 3C22.0424 3.67548 20.9821 4.19211 19.86 4.53C19.2577 3.83751 18.4573 3.34669 17.567 3.12393C16.6767 2.90116 15.7395 2.9572 14.8821 3.28444C14.0247 3.61168 13.2884 4.1944 12.773 4.95372C12.2575 5.71303 11.9877 6.61234 12 7.53V8.53C10.2426 8.57557 8.50127 8.18581 6.93101 7.39545C5.36074 6.60508 4.01032 5.43864 3 4C3 4 -1 13 8 17C5.94053 18.398 3.48716 19.0989 1 19C10 24 21 19 21 7.5C20.9991 7.22145 20.9723 6.94359 20.92 6.67C21.9406 5.66349 22.6608 4.39271 23 3V3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <a href="#" aria-label="Instagram">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17 2H7C4.23858 2 2 4.23858 2 7V17C2 19.7614 4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V7C22 4.23858 19.7614 2 17 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M16 11.37C16.1234 12.2022 15.9813 13.0522 15.5938 13.799C15.2063 14.5458 14.5931 15.1514 13.8416 15.5297C13.0901 15.9079 12.2384 16.0396 11.4078 15.9059C10.5771 15.7723 9.80976 15.3801 9.21484 14.7852C8.61991 14.1902 8.22773 13.4229 8.09406 12.5922C7.9604 11.7615 8.09206 10.9099 8.47032 10.1584C8.84858 9.40685 9.45418 8.79374 10.201 8.40624C10.9478 8.01874 11.7978 7.87659 12.63 8C13.4789 8.12588 14.2648 8.52146 14.8717 9.12838C15.4785 9.73529 15.8741 10.5211 16 11.37Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M17.5 6.5H17.51" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+            <p>&copy; 2025 BoycottAmerican.ca - A Canadian Trade Response Initiative</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript for enhanced interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 70,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Newsletter form handling
+            const newsletterForm = document.querySelector('.newsletter-form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const emailInput = this.querySelector('input[type="email"]');
+                    if (emailInput && emailInput.value) {
+                        alert('Thank you for subscribing! You will receive updates on Canadian trade initiatives.');
+                        emailInput.value = '';
+                    } else {
+                        alert('Please enter a valid email address.');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
